@@ -60,6 +60,7 @@ body {
   vertical-align: middle;
   padding: 0px 25px;
   position: relative;
+  cursor: pointer;
 
   webkit-transition: transition 0.3s;
   -moz-transition: transition 0.3s;
@@ -210,7 +211,7 @@ body {
   background: white;
 }
 .bg-grey-1 {
-  background: #fbfbfb;
+  background: #d9d9d9;
 }
 .bg-grey-2 {
   background: #f2f2f2;
@@ -219,7 +220,7 @@ body {
   background: lightgrey;
 }
 .bg-grey-4 {
-    background: #bfbfbf;
+  background: #bfbfbf;
 }
 .bg-black {
   background: black;

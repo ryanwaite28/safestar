@@ -7,14 +7,16 @@ var nunjucks = require('nunjucks');
 var util = require('util');
 var fs = require('fs');
 var assert = require('assert')
+var Sequelize = require('sequelize');
 
-// var db_conn_str = 'mongodb://localhost:27017/db';
-// var MongoClient = require('mongodb').MongoClient;
-// var mongojs = require('mongojs');
-// var mongoose = require('mongoose');
-// var database = mongoose.connect(db_conn_str);
-
-
+// var knex = require('knex')({
+//   client: 'sqlite3',
+//   connection: {
+//     filename: "./database.sqlite"
+//   }
+// });
+//
+// var bookshelf = require('bookshelf')(knex);
 
 /* --- --- -- --- --- */
 /* --- Setup Code --- */
@@ -37,34 +39,29 @@ app.use('/js', express.static( pages['jsPath'] ));
 app.use('/img', express.static( pages['imgPath'] ));
 
 nunjucks.configure(pages['templatesPath'], {
-    autoescape: true,
-    express: app
+  autoescape: true,
+  express: app
 });
 
 
-// function testConnection() {
-//   MongoClient.connect(db_conn_str, function(err, db) {
-//     if( err ) {
-//       console.log('Connection Error...');
-//       return;
-//     }
-//     console.log("Connected successfully to server");
-//     db.close();
-//   });
-// }
+
+// var sequelize = new Sequelize('sqlite://database.sqlite');
+var sequelize = new Sequelize('sqlite:///database.db', {
+  dialect: 'sqlite',
+})
+// var sequelize = new Sequelize('postgresql://travellr_dummyuser:dummypassword123@travellrs.com:5432/travellr_dummy', {
+//   dialect: 'postgres',
+//   port: 5432
+// })
+
+var User = sequelize.define('user', {
+  uname: { type: Sequelize.STRING, allowNull: false},
+  pswrd: { type: Sequelize.STRING, allowNull: false},
+  uniqueValue: {type: Sequelize.STRING, unique: true}
+});
 
 
-/* --- DataBase Schemas --- */
-// var userSchema = new mongoose.Schema({
-//   firstName: String,
-//   lastName: String
-// });
-// var userModel = mongoose.model('user', userSchema);
-
-
-
-
-
+sequelize.sync();
 
 /* --- --- --- --- --- */
 /* --- Application --- */
