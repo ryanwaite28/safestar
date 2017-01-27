@@ -3,47 +3,20 @@
 <html>
 
 	<head>
-
 		<title>SafeStar | Welcome!</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="https://ryanwaite28.github.io/my-cdn/css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="http://ryanwaite28.github.io/my-cdn/css/emerald.css"/>
+
+		{% include "dependencies-1.html" %}
+
 		<link rel="stylesheet" type="text/css" href="/css/welcome.css"/>
-		<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="mobile-style.css">
+		<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="/css/mobile-style.css">
 		<link rel="icon" type="image/" size="20x20" href=""/>
-		<script src="http://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
-		<script src="http://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
-		<script src="http://ryanwaite28.github.io/my-cdn/js/emerald.js"></script>
-		<script src="https://ryanwaite28.github.io/my-cdn/js/parallax/parallax.min.js"></script>
 		<script src="/js/grand.js"></script>
 		<script src="/js/controllers/welcome-ctrl.js"></script>
-
 	</head>
 
 	<body ng-app="myApp" ng-controller="masterCtrl">
 
-		<div id="top-bar" class="bg-grey-grade">
-			<div id="tb-inner">
-
-				<h1 id="tb-head-text"><i class="fa fa-star" aria-hidden="true"></i> SafeStar</h1>
-
-				<div id="tb-collapse-div" class="">
-					<ul id="tb-links-list">
-						<li class="switch-li" data-pos="1">Info <i class="fa fa-chevron-down" aria-hidden="true"></i>
-							<ul class="switch-ul collapse" data-pos="1">
-								<li>About</li>
-								<li>FAQ</li>
-							</ul>
-						</li>
-						<li><a title="" href="">Login</a></li>
-						<li><a title="" href="">Signup</a></li>
-					</ul>
-				</div>
-
-			</div>
-		</div>
+		{% include "topbar-1.html" %}
 
 		<!--  -->
 

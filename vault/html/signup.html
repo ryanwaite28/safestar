@@ -1,46 +1,60 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>World Archive | Sign Up!</title>
-    <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="https://ryanwaite28.github.io/my-cdn/css/font-awesome.css"/>
-    <link rel="stylesheet" type="text/css" href="https://ryanwaite28.github.io/my-cdn/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="https://ryanwaite28.github.io/my-cdn/css/emerald.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/grand.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/welcome.css"/>
-    <link rel="icon" type="image/png" size="20x20" href="/img/ancient-icon-1.png"/>
+<head>
+	<title>SafeStar | Signup!</title>
 
-    <script src="/js/nunjucks-slim.js"></script>
-    <script src="https://ryanwaite28.github.io/my-cdn/js/jquery.js"></script>
-    <script src="https://ryanwaite28.github.io/my-cdn/js/bootstrap.js"></script>
-    <script src="https://ryanwaite28.github.io/my-cdn/js/parallax/parallax.min.js"></script>
-    <script src="https://ryanwaite28.github.io/my-cdn/js/angular.js"></script>
-    <script src="/js/apps/signup-app.js"></script>
-  </head>
+	{% include "dependencies-1.html" %}
 
-  <body ng-app="signupApp" ng-controller="signupCtrl">
+	<link rel="stylesheet" type="text/css" href="/css/signup.css"/>
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 785px)" href="/css/mobile-style.css">
+	<link rel="icon" type="image/" size="20x20" href=""/>
+	<script src="/js/grand.js"></script>
+	<script src="/js/controllers/welcome-ctrl.js"></script>
+</head>
 
-    <!-- Top Bar -->
+	<body ng-app="myApp" ng-controller="masterCtrl">
 
-    {% include "topbar-1.html" %}
+		{% include "topbar-1.html" %}
 
-    <!-- Contents -->
+		<!--  -->
 
-    <div id="main-contain" class="container-fluid">
+		<div id="main-container" class="container-fluid">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="spacr-1">
-            <h1 class="text-center">Signup</h1>
-            <hr>
+			<div class="row padd-2" style="">
+				<div class="col-md-12">
+					<div class="box-12">
+						<h2 class="text-center" style="margin: 0px;">Signup</h2><br>
 
-          </div>
-        </div>
-      </div>
+						<form id="signup-box" enctype="application/x-www-form-urlencoded" action="/signup" method="POST">
+							<input class="middlr input-s1" type="text" name="fname" placeholder="First Name"/><br>
+							<input class="middlr input-s1" type="text" name="lname" placeholder="Last Name"/><br>
+							<input class="middlr input-s1" type="email" name="email" placeholder="Email"/><br>
+							<input class="middlr input-s1" type="password" name="pswrd" placeholder="Password"/><br>
+							<input class="middlr btn btn-success transition" type="button" name="submit" value="Submit"/>
+						</form>
+						<br>
 
-    </div>
+						<p class="text-center"><strong></strong></p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="">
 
-  </body>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="">
+
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+		</div>
+
+	</body>
+
 </html>
